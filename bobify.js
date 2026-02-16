@@ -1,36 +1,88 @@
+const heading= document.querySelector("h1");
+
+const bt=document.querySelectorAll("button");
+const body=document.querySelector("body");
  
+for(bts of bt){
+    bts.addEventListener("click",()=>{
+        const newc=generator();
+         heading.style.color=newc;
+        
+    }
+);
 
-    const body=document.querySelector("body");
+}
 
-    const container=document.createElement("div");
-    body.append(container);
+body.addEventListener("keydown",function(event){
+     
+    if(event.code=="KeyB"){
+        console.log("k");
+        const newc=generator();
+         heading.style.color=newc;
+        
+    }
+})
 
-    const para1=document.createElement("p");
-    container.appendChild(para1);
+const generator=function(){
+    const colors=["pink","burlywood","white"];
 
-    para1.classList.add("red");
-
-    const h33=document.createElement('h3');
-    container.appendChild(h33);
-    h33.append("blue h3");
-    h33.classList.add("blue");
-
-    const childdiv=document.createElement("div");
-    container.appendChild(childdiv);
-    childdiv.classList.add("childstyle");
-
-    const h11=document.createElement("h1");
-    childdiv.appendChild(h11);
-    h11.append("I am h1 in a div");
-
-    const pid=document.createElement("p");
-
-
-
-
-
-    childdiv.appendChild(pid);
+    const final=colors[Math.floor(Math.random()*3)];
+    return final;
+}
 
 
 
-    pid.append("nenu kuda bro");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const inn=document.querySelector("input");
+const btn=document.querySelector("button");
+const div=document.querySelector("div");
+const pp=document.querySelector("p");
+ const h11=document.querySelector("h1");
+pp.addEventListener("click",function(){
+    alert("Bhai");
+})
+h11.addEventListener("click",function(){
+    alert("h1");
+})
+
+
+btn.addEventListener("click",function(){
+ 
+    
+    const h=document.createElement("h2");
+    h.innerText=inn.value;
+    div.appendChild(h);
+    inn.value="";
+
+})
+
+
+
+let data=function(datas){
+return new Promise((resolve,reject )=>{
+    if (datas>1){
+       resolve(succes());
+    }
+    else{ reject(fail())};
+}
+)
+};
+succes=()=>{
+    console.log("aba");
+}
+fail=()=>{
+    console.log("fsil");
+}
